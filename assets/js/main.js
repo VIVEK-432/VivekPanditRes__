@@ -5,7 +5,7 @@ const showMenu =(toggleId, navId) =>{
 	nav = document.getElementById(navId)
 
 	if(toggle && nav){
-		toggle.addEventlistener('click', ()=>{
+		toggle.addEventListener('click', ()=>{
 			nav.classList.toggle('show')
 		})
 	}
@@ -27,7 +27,7 @@ function linkAction(){
 	const navMenu = document.getElementById('nav-menu')
 	navMenu.classList.remove('show')
 }
-navLink.forEach(n => n.addEventlistener('click', linkAction));
+navLink.forEach(n => n.addEventListener('click', linkAction));
 
 // <<<<<<<<<<<< SCROLL REVEAL ANIMATION >>>>>>> //
 const sr = ScrollReveal({
