@@ -8,12 +8,14 @@
 
 /*<<<<<== Colors ==>>>>>*/
 :root{
+  --body-color: #FFFF;
   --first-color: #4070F4;
   --second-color: #0E2431;
   --white-color: #FAFAFF;
   --dark-color: #2A3B47;
   --text-color: #697477;
-  --first-color-alt: #048654;
+  --first-color-alt: #22C5AD;
+  --second-color-alt: #0E2431;
 
 
 /*<<<<<Z INDEX >>>>>>>>*/
@@ -68,10 +70,12 @@
 }
 
 html{
+  background-color: var(--body-color);
   scroll-behavior: smooth;
 }
 
 body{
+  background-color: var(--body-color);
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -86,9 +90,13 @@ h1,h2,h3,p{
 /*<<<<<<<<<<<<<<<< DARK MODE VARIABLE >>>>>>>>>>>>*/
 body.dark-theme{
   --title-color: #F1F3F2;
+  --first-color: #19B3BB;
+  --second-color: #F1F3F2;
   --text-color: #C7D1CC;
-  --body-color: #1D2521;
+  --body-color: #000410;
   --container-color: #27302C;
+  --white-color: #162012;
+  --second-color-alt: #000;
 }
 
 /*<<<<<<<<<<<<< DARK MODE BUTTON >>>>>>>>>>>>*/
@@ -162,8 +170,8 @@ img{
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, .15);
+  background-color: var(--body-color);
+  /*box-shadow: 0 1px 4px rgba(146, 161, 176, .15);*/
 }
 
 /*<<<<<<<<< NAVIGTAION >>>>>>>>>>>*/
@@ -299,6 +307,7 @@ img{
 }
 
 .home_social{
+  color: var(--title-color);
   display: flex;
   flex-direction: column;
 }
@@ -325,7 +334,7 @@ img{
 .button{
   display: inline-block;
   background-color: var(--first-color);
-  color: #fff;
+  color: var(--white-color);
   padding: .75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: .5rem;
@@ -343,7 +352,7 @@ img{
 }
 
 .about_subtitle{
-  margin-bottom: var(--mb-2);
+  margin-bottom: var(--mb-3);
 }
 
 .about_img{
@@ -425,6 +434,8 @@ img{
 }
 
 .contact_input{
+  color: var(--text-color);
+  background-color: var(--body-color);
   width: 100%;
   padding: .8rem;
   outline: none;
@@ -455,7 +466,7 @@ img{
 }
 
 .footer{
-  background-color: var(--second-color);
+  background-color: var(--second-color-alt);
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
@@ -464,6 +475,7 @@ img{
 
 .footer_social{
   margin-bottom: var(--mb-4);
+  color: var(--title-color);
 }
 
 .footer_icon{
@@ -497,6 +509,7 @@ img{
       align-self: flex-end;
     }
     .home_social{
+      color: var(--title-color);
       padding-top: 0;
       padding-bottom: 2.5rem;
       flex-direction: row;

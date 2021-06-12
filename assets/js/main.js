@@ -15,7 +15,7 @@ showMenu('nav-toggle','nav-menu')
 
 // <<<<<ACTIVE AND REMOVE MENU>>>>>>>>//
 
-const navLink = document.querySelectorAll('.nav_link');
+const navLink = document.querySelectorAll('.nav_link')
 
 function linkAction(){
 	// <<<<<<<<< ACTIVE LINK >>>>>>> //
@@ -28,20 +28,22 @@ function linkAction(){
 	navMenu.classList.remove('show-menu')
 }
 
-navLink.forEach(n => n.addEventListener('click', linkAction));
+navLink.forEach(n => n.addEventListener('click', linkAction))
 
 // <<<<<<<<<<<SCROLL SECTION LINK >>>>>>>>>>>>>>>>//
 const sections = document.querySelectorAll('section[id]')
 
+window.addEventListener('scroll', scrollActive)
+
 function scrollActive(){
-	const scrollUP = window.pageUPoffset
+	const scrollY = window.pageYOffset
 
 	sections.forEach(current =>{
 		const sectionHeight = current.offsetHeight
 		const sectionTop = current.offsetTop -50;
 		sectionId = current.getAttribute('id')
 
-		if (scrollUP > sectionTop && scrollUP <= sectionTop + sectionHeight) {
+		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
 			document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active')
 		}
 		else {
@@ -49,13 +51,12 @@ function scrollActive(){
 		}
 	})
 }
-window.addEventListener('scroll', scrollActive)
 
 // <<<<<<<<<<<<<<<< SCROLL UP BY BUTTON >>>>>>>>>>>>>>>>>//
 function scrollHeader(){
 	const nav = document.getElementById('header')
 
-	if (this.scrollUP >= 200) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+	if(this.scrollY >= 200) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -63,7 +64,7 @@ window.addEventListener('scroll', scrollHeader)
 function scrollTop() {
 	const scrollTop = document.getElementById('scroll-top');
 
-	if(this.scrollUP >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
+	if(this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollTop)
 
@@ -106,30 +107,30 @@ const sr = ScrollReveal({
 	distance: '80px',
 	duration: 2000,
 	reset: true
-});
+})
 
 // <<<<<<<<<<< SCROLL HOME >>>>>>>>>>>>> //
-sr.reveal('.home_title',{});
-sr.reveal('.button',{delay: 200});
-sr.reveal('.home_img',{delay: 400});
-sr.reveal('.home_social-icon',{interval: 200});
+sr.reveal('.home_title',{})
+sr.reveal('.button',{delay: 200})
+sr.reveal('.home_img',{origin:'right', delay: 400})
+sr.reveal('.home_social-icon',{interval: 200})
 
 // <<<<<<<<<<<< SCROLL ABOUT >>>>>>>>> //
-sr.reveal('.about_img',{});
-sr.reveal('.about_subtitle',{delay: 400});
-sr.reveal('.about_text',{delay: 400});
+sr.reveal('.about_img',{})
+sr.reveal('.about_subtitle',{delay: 400})
+sr.reveal('.about_text',{delay: 400})
 
 // <<<<<<<<<<<< SCROLL SKILLS >>>>>>>>>>>>> //
-sr.reveal('.skills_subtitle', {});
-sr.reveal('.skills_name', {distance: '20px', delay: 50, interval: 100});
-sr.reveal('.skills_img', {delay: 400});
+sr.reveal('.skills_subtitle', {})
+sr.reveal('.skills_name', {distance: '20px', delay: 50, interval: 100})
+sr.reveal('.skills_img', {delay: 400})
 
 // <<<<<<<<<<<< SCROLL PROJECT >>>>>>>>>>>>> //
-sr.reveal('.work_img', {interval: 200});
+sr.reveal('.work_img', {interval: 200})
 
 
 // <<<<<<<<<<< SCROLL CONTACT >>>>>>>>>>>> //
-sr.reveal('.contact_subtitle', {});
-sr.reveal('.contact_text', {interval: 200});
-sr.reveal('.contact_input', {delay: 400});
-sr.reveal('.contact_button', {delay: 600});
+sr.reveal('.contact_subtitle', {})
+sr.reveal('.contact_text', {interval: 200})
+sr.reveal('.contact_input', {delay: 400})
+sr.reveal('.contact_button', {delay: 600})
