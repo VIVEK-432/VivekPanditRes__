@@ -93,9 +93,10 @@ body.dark-theme{
   --first-color: #19B3BB;
   --second-color: #F1F3F2;
   --text-color: #C7D1CC;
+  --dark-color: #E1E1E1;
   --body-color: #000410;
   --container-color: #27302C;
-  --white-color: #162012;
+  --white-color: #111329;
   --second-color-alt: #000;
 }
 
@@ -181,7 +182,7 @@ img{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: var(--font-semi);
+  /*font-weight: var(--font-semi);*/
 }
 
 @media screen and (max-width: 768px){
