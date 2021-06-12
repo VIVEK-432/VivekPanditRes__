@@ -13,6 +13,12 @@
   --white-color: #FAFAFF;
   --dark-color: #2A3B47;
   --text-color: #697477;
+  --first-color-alt: #048654;
+
+
+/*<<<<<Z INDEX >>>>>>>>*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
 }
 
 /*<<<<< Fonts >>>>>>>*/
@@ -74,6 +80,25 @@ body{
 
 h1,h2,h3,p{
   margin: 0;
+}
+
+
+/*<<<<<<<<<<<<<<<< DARK MODE VARIABLE >>>>>>>>>>>>*/
+body.dark-theme{
+  --title-color: #F1F3F2;
+  --text-color: #C7D1CC;
+  --body-color: #1D2521;
+  --container-color: #27302C;
+}
+
+/*<<<<<<<<<<<<< DARK MODE BUTTON >>>>>>>>>>>>*/
+.change-theme{
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 ul{
@@ -159,7 +184,8 @@ img{
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--seccond-color);
+    background-color: rgba(255,255,255,.3);
+    backdrop-filter: blur(10px);
     transition: .5s;
   }
 }
@@ -170,7 +196,7 @@ img{
 
 .nav_link{
   position: relative;
-  color: #fff;
+  color: var(--dark-color);;
 }
 
 .nav_link:hover{
@@ -208,11 +234,49 @@ img{
   background-color: var(--first-color);
 }
 
+/*<<<<<<<<< CHANGE MODE >>>>>>>>>>*/
+.scroll-header{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
 /*<<<<<<<<<<<SHOW MENU >>>>>>>>>*/
 
-.show{
+.show-menu{
   right: 0;
 }
+
+/*<<<<<<<<<<<<< SCROLL TOP >>>>>>>>>>>*/
+.scrolltop{
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: .3rem;
+  background: rgb(43 115 240 / 50%);
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  transition: .4s;
+  visibility: hidden;
+}
+
+.scrolltop:hover{
+  background-color: var(--first-color-alt);
+}
+
+.scrolltop_icon{
+  font-size: 1.8rem;
+  color: var(--body-color);
+}
+
+/* <<<<<<<<<<< Show scrolltop >>>>>>>>>>>>>>>*/
+.show-scroll{
+  visibility: visible;
+  bottom: 1.5rem;
+}
+
+
 
 /*<<<<<<<<<<< HOME >>>>>>>>>>>>>>*/
 
@@ -463,6 +527,11 @@ img{
     }
     .nav_link{
       color: var(--second-color);
+    }
+
+    .change-theme{
+      position: initial;
+      margin-left: var(--mb-2);
     }
 
     .about_container{
