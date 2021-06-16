@@ -119,6 +119,7 @@ sr.reveal('.home_social-icon',{interval: 200})
 sr.reveal('.about_img',{})
 sr.reveal('.about_subtitle',{delay: 400})
 sr.reveal('.about_text',{delay: 400})
+sr.reveal('.about_icon',{delay:500})
 
 // <<<<<<<<<<<< SCROLL SKILLS >>>>>>>>>>>>> //
 sr.reveal('.skills_subtitle', {})

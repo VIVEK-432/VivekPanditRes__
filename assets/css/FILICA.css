@@ -8,10 +8,10 @@
 
 /*<<<<<== Colors ==>>>>>*/
 :root{
-  --body-color: #FFFF;
+  --body-color: #C0C0C0;
   --first-color: #4070F4;
   --second-color: #0E2431;
-  --white-color: #FAFAFF;
+  --white-color: #C4C4C4;
   --dark-color: #2A3B47;
   --text-color: #697477;
   --first-color-alt: #22C5AD;
@@ -36,6 +36,7 @@
   :root{
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
+    --h1-font-size: 1.15rem;
     --normal-font-size: 1rem;
   }
 }
@@ -382,6 +383,10 @@ img{
   margin-bottom: var(--mb-3);
 }
 
+.about_edu{
+
+}
+
 .about_img{
   display: flex;
   background-color: var(--first-color);
@@ -581,17 +586,29 @@ img{
     }
 
     .about_container{
-      align-items: center;
-      /* padding: 4rem 0; */
-      text-align: initial;
+      align-items: flex-start;
+      padding: 4rem 0;
+      text-align: center;
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .about_text{
+      font-size: var(--h1-font-size);
+
+    }
+
     /* .about_img{
       width: 200px;
       height: 200px;
     } */
     .about_img img{
       width:  300px;
+    }
+
+    .about_icon{
+      color: var(--title-color);
+      padding: 15px 0 15px;
+      align-self: flex-start;
     }
 
     .skills_container{
